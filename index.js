@@ -1,14 +1,49 @@
-var room = document.getElementById("room-1").value;
-var adults = 1;
-var children = 0;
-
-function addChildren(count) {
-	var children = document.getElementById("room-1-children")
-	var parentElements = children.nextSibling;
-	var text = '';
-	for (let i = 0; i < children.value; i++) {
-		text += `<div><label for="children-1">Возраст ребенка №${i+1}</label>
-		<input type="text" id="room-1-childrens-children-${i+1}" list="age" name="children-${i+1}" required size="5"></div>`
+var order = [
+	{
+		"room": {
+			"number": 1,
+			"adults": 1,
+			"childrens": 2,
+			"childrens-age":
+				{
+					"children-age-1": 6,
+					"children-age-2": 6
+				},
+		},
+	},
+	{
+		"room": {
+			"number": 2,
+			"adults": 2,
+			"childrens": 1,
+			"childrens-age":
+				{
+					"children-age-1": 6,
+				},
+		},
 	}
-	parentElements.innerHTML = text;
+]
+
+function init(){
+	var div = document.createElement("div");
+	var roomLabel = document.createElement("label");
+	var roomInput = document.createElement("input");
+	roomLabel.innerHTML = "Количество комнат: ";
+	roomLabel.setAttribute("for", "room");
+	roomInput.setAttribute("type", "text");
+	roomInput.setAttribute("id", "room");
+	roomInput.setAttribute("size", "5");
+	roomInput.setAttribute("value", order.length);
+	div.appendChild(roomLabel);
+	div.appendChild(roomInput);
+	document.body.appendChild(div);
+for (let i = 0; i < order.length; i++) {
+	var div = document.createElement("div")
+	var label = document.createElement("label")
+	var input = document.createElement("input")
+	label.innerHTML = order[i].room.number;
+	div.appendChild(label);
+	document.body.appendChild(div);
 }
+}
+init()
