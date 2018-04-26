@@ -23,7 +23,7 @@ var order = [
 		},
 	}
 ]
-
+// завнить childrens и childrensAge на массив где количество детей это будет кол-во элементов а значения возраст
 function init() {
 	var orderForm = document.querySelector('.order')
 	var div = document.createElement("div");
@@ -123,4 +123,5 @@ function orderRoom() {
 		}
 		init()
 	}
+	document.getElementById("room").addEventListener("change", orderRoom)
 }
