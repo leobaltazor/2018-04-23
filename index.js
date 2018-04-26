@@ -33,6 +33,7 @@ function init() {
 	roomLabel.setAttribute("for", "room");
 	roomInput.setAttribute("type", "text");
 	roomInput.setAttribute("id", "room");
+	roomInput.setAttribute("list", "rooms");
 	roomInput.setAttribute("size", "5");
 	roomInput.setAttribute("value", order.length);
 	div.appendChild(roomLabel);
